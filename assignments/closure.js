@@ -6,12 +6,17 @@ function simpleFun() {
 }
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = (something => {
   // Return a function that when invoked increments and returns a counter variable.
-  function increments(){
-    
+  return function() {
+    something += 1;
+    return something;
   }
-};
+  })(0);
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2

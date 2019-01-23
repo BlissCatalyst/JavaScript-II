@@ -59,7 +59,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullName = [];
 runners.forEach(function(runners) {
     fullName.push(`${runners.first_name} ${runners.last_name}`);
-})
+});
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
@@ -68,7 +68,7 @@ console.log(fullName);
 let allCaps = [];
 runners.map(function(runners) {
     return allCaps.push(runners.first_name.toUpperCase());
-})
+});
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
@@ -86,7 +86,7 @@ console.log(largeShirts);
 let ticketPriceTotal = [];
 ticketPriceTotal = runners.reduce(function(total, runners) {
     return total += runners.donation;
-}, 0)
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -97,7 +97,25 @@ console.log(ticketPriceTotal);
 // array methods listed above.
 
 // Problem 1
+// Selfish Squidward doesn't want any donations that are odd numbered. Make a list of
+// those with odd donations and tell them to add a dollar.
+let oddDonates = runners.filter(function(runners) {
+    return runners.donation % 2 != 0;
+});
+console.log(oddDonates);
 
 // Problem 2
+// ~~Hacker here~~ I'm just grabbing all of the e-mails for spam. :D
+let mailList = [];
+runners.forEach(function(runners) {
+    mailList.push(runners.email);
+});
+console.log(mailList);
 
 // Problem 3
+// Last names capitalized?
+let capLast = [];
+runners.map(function(runners) {
+    capLast.push(runners.last_name.toUpperCase());
+});
+console.log(capLast);
